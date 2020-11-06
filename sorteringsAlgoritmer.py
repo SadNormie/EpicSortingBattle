@@ -22,11 +22,32 @@ def bogoSort(items):
     return items
 
 
+def selectionSort(items):
+    items = items.copy()
+    for i in range(len(items) - 1):
+        minIdx = i
+        for j in range(i, len(items) - 1):
+            if items[j] < items[minIdx]:
+                minIdx = j
+        items[i], items[minIdx] = items[minIdx], items[i]
+    return items
+
+def insertionSort(items):
+    items = items.copy()
+    isSorted = None
+    while not isSorted:
+        for i in range(len(items) - 1):
+            if items[i + 1] < items[i]:
+                items[i], items[i - 1] = items[i - 1], items[i]
+    for p in range(len(items) - 1)
+    return items
+
+
 if __name__ == '__main__':
     for i in range(10):
         listen = list(range(1, 8))
-        sorteret = bogoSort(listen)
         random.shuffle(listen)
+        sorteret = insertionSort(listen)
         print('Shuffled:\t', listen)
         print('Sorted:\t\t', sorteret)
         print('==============================================================')
